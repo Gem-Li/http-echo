@@ -62,6 +62,7 @@ func main() {
 
 	RegistRoute(r)
 
-	log.Println("http server start...")
-	log.Fatal(r.Run(fmt.Sprintf(":%d", port)))
+	httpAddr := fmt.Sprintf(":%d", port)
+	log.Printf("http server start %s...", httpAddr)
+	log.Fatal(r.Run(httpAddr))
 }
